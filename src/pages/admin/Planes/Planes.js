@@ -3,7 +3,7 @@ import Pricing from "./PlanesComponent";
 import TitleHeader from "../Clients/Components/Title-head/TitleHeader";
 import { Membresias } from "../../../api/membresia";
 import { useAuth } from "../../../hooks";
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import Swal from "sweetalert2";
 import { Dna } from "react-loader-spinner";
 
