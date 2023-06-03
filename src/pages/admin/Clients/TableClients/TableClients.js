@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 import { Client } from "../../../../api/client";
 import { useAuth } from "../../../../hooks/useAuth";
 
-import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 
 const clientController = new Client();
 
