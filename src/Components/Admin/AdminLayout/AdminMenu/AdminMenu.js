@@ -92,7 +92,7 @@ export default function AdminMenu(props) {
             className={activeItem === "planes"? "items-cont-active" : "items-cont"}
             title="Planes"
           >
-            <Icon name="check" color="yellow" circular size="large" />
+            <Icon name="check" color="yellow" size="large" />
           </Link>
         </>
       )}
