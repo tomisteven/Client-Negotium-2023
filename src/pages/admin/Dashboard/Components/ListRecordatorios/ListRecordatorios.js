@@ -40,7 +40,7 @@ export function ListRecordatorios({img_pendiente, img_prioridad, img_alert, reco
         backgroundColor: obscuro ? '#46505E' : '#fff',
         boxShadow: obscuro ? '0px 0px 2px 0px #fff' : '0px 0px 2px 0px #46505E'
       }}>
-        <div className='recordatorios-header' >
+        <div className='recordatorios-header'>
           <img className='alert-img-header' src={img_alert} alt=""/>
           <div className='div-prioridad-pendiente' style={{
           backgroundColor: obscuro ? '#46505E' : '#fff',
