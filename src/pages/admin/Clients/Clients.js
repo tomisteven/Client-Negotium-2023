@@ -256,8 +256,10 @@ export function Clients() {
           valueFilter={valueFilter}
           title="Lista de clientes"
           img={img_clients}
+
         />
         <div className="contenedores-cards">
+          <h3 className="lista-clientes-name">Lista de Clientes</h3>
           <CardsHeader
             gradient={
               "linear-gradient(120deg, rgb(255, 157, 0) 0%, rgba(246, 208, 154, 0.65) 100%)"

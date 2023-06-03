@@ -1,3 +1,7 @@
+.lista-clientes-name{
+    display: none;
+}
+
 .title-header{
     color: black;
     font-size: 20px;
@@ -194,4 +198,63 @@
     height: 100px;
     position: relative;
     left: 25%;
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .cont-titulo-header{
+        display: none;
+    }
+    .contenedores-cards{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .cont-card-panel{
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
+    .selector-filter{
+        width: 100%;
+        height: 30px;
+        position: relative;
+        left: 0px;
+
+    }
+    .title-body{
+        font-size: 13px;
+    }
+    .btn-nuevo-cliente, .btn-ver-todos{
+        width: 100%;
+        height: 35px;
+        position: relative;
+        left: 0px;
+        margin-top: 15px;
+    }
+    .input-search{
+        width: 100%;
+        height: 35px;
+        position: relative;
+        left: 0px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    .lista-clientes-name{
+        display: flex;
+        font-size: 13px;
+        color: black;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.315);
+        padding: 5px;
+    }
+
+    .table-clients{
+        overflow-x: scroll;
+        width: 100%;
+    }
+
 }
