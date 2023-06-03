@@ -1,4 +1,4 @@
-
+import styled from "styled-components";
 import Pricing from "./PlanesComponent";
 import TitleHeader from "../Clients/Components/Title-head/TitleHeader";
 import { Membresias } from "../../../api/membresia";
