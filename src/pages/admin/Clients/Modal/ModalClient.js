@@ -157,10 +157,11 @@ export function ModalClient({
               ID: <span className="span-modal"> {modalClient._id}</span>
             </p>
           </Modal.Description>
+          <div className="cont-2-modals">
           <Modal.Content className="table-modal-cont">
             <Header>Historial de Servicios / Productos</Header>
             <Table inverted color="blue" celled>
-              <Table.Header>
+              <Table.Header className="table-modal-cont-header">
                 <Table.Row>
                   <Table.HeaderCell>Servicio</Table.HeaderCell>
                   <Table.HeaderCell>Fecha</Table.HeaderCell>
@@ -183,7 +184,7 @@ export function ModalClient({
                           }}
                           size="mini"
                         >
-                          <Icon name="delete" size="mini" />
+                          <Icon name="trash" size="small" />
                         </Button>
                       </Table.Cell>
                     </Table.Row>
@@ -199,7 +200,7 @@ export function ModalClient({
           <Modal.Content className="table-modal-cont">
             <Header>Servicios Futuros</Header>
             <Table inverted color="grey" celled>
-              <Table.Header>
+              <Table.Header className="table-modal-cont-header">
                 <Table.Row>
                   <Table.HeaderCell>Servicio</Table.HeaderCell>
                   <Table.HeaderCell>Fecha</Table.HeaderCell>
@@ -222,7 +223,7 @@ export function ModalClient({
                             completeService(service._id);
                           }}
                         >
-                          <Icon size="tiny" name="checkmark" />
+                          <Icon size="small" name="trash" />
                         </Button>
                         <Button
                           size="mini"
@@ -246,7 +247,9 @@ export function ModalClient({
               </Table.Body>
             </Table>
           </Modal.Content>
+          </div>
         </Modal.Content>
+
         <Modal.Actions>
           <Button
             content="Agregar Servicio"
