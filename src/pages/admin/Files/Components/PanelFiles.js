@@ -1,6 +1,6 @@
 import React from "react";
 import "./panelFIles.css";
-import img_add from "../../../../assets/Negotium Assets/anadir.png";
+import img_add from "../../../../assets/Negotium Assets/anadir.webp";
 import { Icon, Button } from "semantic-ui-react";
 import ModalNewFile from "./ModalNewFile.js";
 import ModalSearch from "./ModalSearch.js";

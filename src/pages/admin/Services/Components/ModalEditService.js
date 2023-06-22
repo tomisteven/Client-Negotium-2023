@@ -3,7 +3,6 @@ import { Modal, Button, Form, Input } from "semantic-ui-react";
 import { Services } from "../../../../api/service";
 import { toast, ToastContainer } from "react-toastify";
 import { useAuth } from "../../../../hooks/useAuth";
-import { Circles } from "react-loader-spinner";
 import Loading from "../../../../Components/Admin/Loader/Loading";
 
 const serviceController = new Services();

@@ -3,9 +3,9 @@ import "./home.css";
 import HomeHeaderText from "./Home-Header-Text/HomeHeaderText";
 import HomeDescription from "./Home-Description/HomeDescription";
 
-import panel from "../../../../src/assets/Negotium Assets/panel.png";
-import services from "../../../../src/assets/Negotium Assets/servicios.png";
-import clients from "../../../../src/assets/Negotium Assets/clientes.png";
+import panel from "../../../../src/assets/Negotium Assets/panel.webp";
+import services from "../../../../src/assets/Negotium Assets/servicios.webp";
+import clients from "../../../../src/assets/Negotium Assets/clientes.webp";
 
 export function Home() {
   const [zoom0, setZoom0] = useState(false);

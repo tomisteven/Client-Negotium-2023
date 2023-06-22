@@ -2,7 +2,7 @@ import React from "react";
 import "./HeaderAndItems.css";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
-import logo from "../../../assets/Negotium Assets/logoN.png";
+import logo from "../../../assets/Negotium Assets/logoN.webp";
 
 export function HeaderAndItems() {
   return (

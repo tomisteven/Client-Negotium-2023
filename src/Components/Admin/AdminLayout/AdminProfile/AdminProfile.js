@@ -1,8 +1,8 @@
 import React from "react";
 import { useAuth } from "../../../../hooks";
-import user_img from "../../../../assets/Negotium Assets/perfil.png";
-import verificado from "../../../../assets/Negotium Assets/verificado2.png";
-import noverificado from "../../../../assets/Negotium Assets/noverificado.png";
+import user_img from "../../../../assets/Negotium Assets/perfil.webp";
+import verificado from "../../../../assets/Negotium Assets/verificado2.webp";
+import noverificado from "../../../../assets/Negotium Assets/noverificado.webp";
 import "./AdminProfile.css";
 
 export function AdminProfile() {

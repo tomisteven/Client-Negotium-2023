@@ -1,7 +1,7 @@
 import React from "react";
 import "./SearchRecordatorios.css";
-import iconAlert from "../../../../assets/Negotium Assets/senal-de-alerta.png";
-import iconAdd from "../../../../assets/Negotium Assets/comprobado.png";
+import iconAlert from "../../../../assets/Negotium Assets/senal-de-alerta.webp";
+import iconAdd from "../../../../assets/Negotium Assets/comprobado.webp";
 import { Recordatorios } from "../../../../api/recordatorios";
 import { useAuth } from "../../../../hooks";
 import { Checkbox, Form, Button, Input } from "semantic-ui-react";

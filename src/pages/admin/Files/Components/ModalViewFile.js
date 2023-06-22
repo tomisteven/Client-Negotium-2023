@@ -2,22 +2,16 @@ import React, { useCallback, useState } from "react";
 import {
   Button,
   Modal,
-  Form,
-  Input,
-  Select,
-  Image,
   Table,
 } from "semantic-ui-react";
-import { useAuth } from "../../../../hooks/useAuth";
-import pdf_icon from "../../../../assets/Negotium Assets/pdf_icon.png";
-import img_icon from "../../../../assets/Negotium Assets/img.png";
+import pdf_icon from "../../../../assets/Negotium Assets/pdf_icon.webp";
+import img_icon from "../../../../assets/Negotium Assets/img.webp";
 
 import "./modalNewFile.css";
 
 export default function ModalViewFile({
   openView,
   setOpenView,
-  onReload,
   arrSearch,
   setOpenSearch,
   deleteFile,

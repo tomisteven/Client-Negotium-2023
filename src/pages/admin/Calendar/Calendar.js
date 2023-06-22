@@ -4,11 +4,9 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import { Client } from "../../../api/client";
 import { useAuth } from "../../../hooks/useAuth";
-import { Dimmer, Icon, Loader } from "semantic-ui-react";
 import esLocale from "@fullcalendar/core/locales/es";
 import TitleHeader from "../Clients/Components/Title-head/TitleHeader";
-import img_calendar from "../../../assets/Negotium Assets/calendar.png";
-import avatar from "../../../assets/Negotium Assets/perfil.png";
+import avatar from "../../../assets/Negotium Assets/perfil.webp";
 import Loading from "../../../Components/Admin/Loader/Loading";
 
 const client = new Client();

@@ -1,11 +1,11 @@
 import React from "react";
 import "./servicesPanel.css";
-import img_vendidos from "../../../../assets/Negotium Assets/total.png";
-import img_activos from "../../../../assets/Negotium Assets/active.png";
-import img_total from "../../../../assets/Negotium Assets/vendido.png";
-import img_inactivos from "../../../../assets/Negotium Assets/inactive.png";
-import img_chart_down from "../../../../assets/Negotium Assets/chart_down.png";
-import img_chart_up from "../../../../assets/Negotium Assets/chart_up.png";
+import img_vendidos from "../../../../assets/Negotium Assets/total.webp";
+import img_activos from "../../../../assets/Negotium Assets/active.webp";
+import img_total from "../../../../assets/Negotium Assets/vendido.webp";
+import img_inactivos from "../../../../assets/Negotium Assets/inactive.webp";
+import img_chart_down from "../../../../assets/Negotium Assets/chart_down.webp";
+import img_chart_up from "../../../../assets/Negotium Assets/chart_up.webp";
 import ModalNewService from "./ModalNewService";
 import ItemPanelServices from "./ItemPanelServices";
 import { Button, Input } from "semantic-ui-react";

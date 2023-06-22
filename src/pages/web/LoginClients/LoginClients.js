@@ -4,8 +4,8 @@ import { Button, Card, Icon, Image, Item, Table } from "semantic-ui-react";
 import { Dna } from "react-loader-spinner";
 import { loginClient } from "../../../api/loginClient";
 import { useAuth } from "../../../hooks";
-import img_pagado from "../../../assets/Negotium Assets/active.png";
-import img_deuda from "../../../assets/Negotium Assets/inactive.png";
+import img_pagado from "../../../assets/Negotium Assets/active.webp";
+import img_deuda from "../../../assets/Negotium Assets/inactive.webp";
 
 const loginController = new loginClient();
 

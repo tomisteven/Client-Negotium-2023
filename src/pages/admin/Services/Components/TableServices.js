@@ -1,13 +1,13 @@
 import React from "react";
 import { Button, Image, Modal, Table } from "semantic-ui-react";
-import inactive from "../../../../assets/Negotium Assets/inactive.png";
-import active from "../../../../assets/Negotium Assets/active.png";
+import inactive from "../../../../assets/Negotium Assets/inactive.webp";
+import active from "../../../../assets/Negotium Assets/active.webp";
 import ModalEditService from "./ModalEditService";
 import { Services } from "../../../../api/service";
 import { toast, ToastContainer } from "react-toastify";
 import { useAuth } from "../../../../hooks/useAuth";
 import sweetAlert from "sweetalert2";
-import add_service from "../../../../assets/Negotium Assets/add.png";
+import add_service from "../../../../assets/Negotium Assets/add.webp";
 
 const serviceController = new Services();
 export default function TableServices({

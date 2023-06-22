@@ -1,8 +1,8 @@
 import React from 'react'
 import "./itemFile.css"
 import { Button } from "semantic-ui-react";
-import pdf_icon from "../../../../assets/Negotium Assets/pdf_icon.png";
-import img_icon from "../../../../assets/Negotium Assets/img.png";
+import pdf_icon from "../../../../assets/Negotium Assets/pdf_icon.webp";
+import img_icon from "../../../../assets/Negotium Assets/img.webp";
 export default function ItemFile({file, downdoaldFile, deleteFile}) {
   return (
     <div class="cont_file_item" key={file._id}>

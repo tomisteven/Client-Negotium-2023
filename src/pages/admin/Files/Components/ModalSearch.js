@@ -1,7 +1,5 @@
-import React, { useCallback, useState } from "react";
-import { Button, Modal, Form, Input, Select, Image } from "semantic-ui-react";
-
-import { useAuth } from "../../../../hooks/useAuth";
+import React, {useState } from "react";
+import { Button, Modal, Form, Input} from "semantic-ui-react";
 
 import "./modalNewFile.css";
 
@@ -15,7 +13,6 @@ export default function ModalNewFile({
   setOpenView,
   setArrSearch,
 }) {
-  const { accesToken } = useAuth();
   const [loading, setLoading] = useState(false);
 
   const searchfile = () => {

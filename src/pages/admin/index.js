@@ -1,6 +1,4 @@
 export *  from "./Auth/Auth.js"
-export *  from "./Users/Users.js"
-export * from "./Courses/Courses.js"
 export * from "./Menu/Menu.js"
 export * from "./Recordatorios/Recordatorios_.js"
 export * from "./Dashboard/Dashboard.js"

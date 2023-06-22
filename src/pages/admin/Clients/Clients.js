@@ -1,23 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Clients.css";
 import { useAuth } from "../../../hooks/useAuth";
-import img_clients from "../../../assets/Negotium Assets/group.png";
-import {
-  Loader,
-  Dimmer,
-  Select,
-  Table,
-  Header,
-  Image,
-  Button,
-  Icon,
-  Modal,
-  Input,
-} from "semantic-ui-react";
+import img_clients from "../../../assets/Negotium Assets/group.webp";
+import { Select, Button, Input } from "semantic-ui-react";
 import { Client } from "../../../api/client";
 import { User } from "../../../api/user";
-import avatarM from "../../../assets/Negotium Assets/perfil.png";
-import avatarF from "../../../assets/Negotium Assets/mujer.png";
+import avatarM from "../../../assets/Negotium Assets/perfil.webp";
+import avatarF from "../../../assets/Negotium Assets/mujer.webp";
 import ModalEditar from "./Modal/ModalEditar";
 import { ModalClient } from "./Modal";
 import TableClients from "./TableClients/TableClients";
@@ -87,7 +76,6 @@ export function Clients() {
       });
     }
   };
-  //console.log(searchValue);
 
   //al cambiar el filtro se actualiza el titulo
   const onChangeSetFilter = async (value) => {
@@ -256,7 +244,6 @@ export function Clients() {
           valueFilter={valueFilter}
           title="Lista de clientes"
           img={img_clients}
-
         />
         <div className="contenedores-cards">
           <h3 className="lista-clientes-name">Lista de Clientes</h3>

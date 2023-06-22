@@ -8,7 +8,7 @@ import TitleHeader from "../Clients/Components/Title-head/TitleHeader";
 import ModalEditRecordatorio from "./ModalEditRecordatorio";
 import ItemRecodatorio from "./ItemRecordatorio";
 import Loading from "../../../Components/Admin/Loader/Loading";
-import sin_recordatorios from "../../../assets/Negotium Assets/add.png";
+import sin_recordatorios from "../../../assets/Negotium Assets/add.webp";
 import Swal from "sweetalert2";
 
 const recordatoriosController = new Recordatorios();

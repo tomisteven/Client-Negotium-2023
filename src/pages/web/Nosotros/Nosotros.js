@@ -3,10 +3,9 @@ import HomeHeaderText from '../Home/Home-Header-Text/HomeHeaderText'
 import MarginButton from '../Objetivos/MarginTop/MarginButton'
 import MarginTop from '../Objetivos/MarginTop/MarginTop'
 import {ContImg} from './ContImg/ContImg'
-import { Button } from 'semantic-ui-react'
 
-import archivos_img from '../../../assets/Negotium Assets/archivos.png'
-import recordatorios_img from '../../../assets/Negotium Assets/recordatorios.png'
+import archivos_img from '../../../assets/Negotium Assets/archivos.webp'
+import recordatorios_img from '../../../assets/Negotium Assets/recordatorios.webp'
 
 export function Nosotros() {
 

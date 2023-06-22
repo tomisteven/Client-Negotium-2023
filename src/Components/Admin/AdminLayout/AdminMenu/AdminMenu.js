@@ -4,7 +4,6 @@ import { Menu, Icon, Item } from "semantic-ui-react";
 import "./AdminMenu.css";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../../../hooks/useAuth";
-import proveedor_img from "../../../../assets/Negotium Assets/proveedor.png";
 
 export default function AdminMenu(props) {
 

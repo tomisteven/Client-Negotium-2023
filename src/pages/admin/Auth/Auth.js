@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {Tab} from "semantic-ui-react"
 import "./Auth.scss"
 import {RegisterForm, LoginForm} from "../../../Components/Admin/Auth"
-import Logo from "../../../assets/Negotium Assets/logoN.png"
+import Logo from "../../../assets/Negotium Assets/logoN.webp"
 
 
 export function Auth() {

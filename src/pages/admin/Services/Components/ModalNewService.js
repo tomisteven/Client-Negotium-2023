@@ -1,8 +1,7 @@
 import React from "react";
 import { Button, Modal, Form, Input } from "semantic-ui-react";
-
 import { Services } from "../../../../api/service";
-import { toast, ToastContainer } from "react-toastify";
+import { toast} from "react-toastify";
 import { useAuth } from "../../../../hooks/useAuth";
 import Swal from "sweetalert2";
 

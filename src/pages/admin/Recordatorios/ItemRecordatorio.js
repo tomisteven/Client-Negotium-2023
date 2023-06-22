@@ -1,11 +1,9 @@
 import React from "react";
-import img_baja from "../../../assets/Negotium Assets/baja.png";
-import img_prioridad from "../../../assets/Negotium Assets/priority.png";
-import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
-import { Switch } from "antd";
-import { Button, Icon, Label } from "semantic-ui-react";
+import img_baja from "../../../assets/Negotium Assets/baja.webp";
+import img_prioridad from "../../../assets/Negotium Assets/priority.webp";
+import { Button, Icon, } from "semantic-ui-react";
 import sweetAlert from "sweetalert2";
-import Loading from "../../../Components/Admin/Loader/Loading";
+
 
 export default function ItemRecordatorio({
   recordatorio,
