@@ -100,3 +100,31 @@
   align-items: center;
   margin-top: 5px;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 480px)
+{
+  .cont-title-eventos{
+    display: none;
+  }
+
+
+  .card-servicios-clientes{
+    width: 100%;
+  }
+  .contenido-servicios-clientes{
+    grid-template-columns: auto;
+  }
+  .car-servicios-img{
+    width: 30%;
+    height: 100%;
+  }
+  .car-servicios-img img{
+    width: 30px;
+    height:  30px;
+
+  }
+  .card-servicios-info p{
+    font-size: 10px;
+  }
+
+}

@@ -4,7 +4,7 @@ import "./ClientProveedor.css"
 import "../CountServicesItem/responsive-panel.css"
 import { Icon, Progress } from 'semantic-ui-react'
 
-export function CountClientProveedor({colors, name, cont1, img, img_see, cont2, img_up, img_down, img_add, url_, icon, max_clients, max_proveedores}) {
+export function CountClientProveedor({colors, name, cont1, img_up, img_down, img_add, url_, icon, max_clients}) {
   return (
     <div className='container-cont-items' style={{background: colors}}>
       <div  className='cont-items-header'>

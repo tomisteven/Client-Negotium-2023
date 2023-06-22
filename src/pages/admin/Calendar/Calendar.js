@@ -50,9 +50,7 @@ export function Calendar() {
   });
 
   if (loading || typeof eventsFinal === "undefined") {
-    return (
-      <Loading obscuro={user.obscuro} message="Cargando calendario..." />
-    );
+    return <Loading obscuro={user.obscuro} message="Cargando calendario..." />;
   }
 
   const proxEvents = eventsFinal

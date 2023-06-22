@@ -59,11 +59,8 @@ export function ListClients({
       }}
     >
       <Table
-        basic="very"
         className="overflow-table"
         padded
-        celled
-        collapsing
         style={{ color: obscuro ? "#ffffff" : "#000000" }}
       >
         <Table.Header>
