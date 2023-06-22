@@ -12,7 +12,7 @@ export default function ItemFile({file, downdoaldFile, deleteFile}) {
                         {file.servicio.toUpperCase()}
                       </p>
                       <p class="cont_header_cont_info_title" style={
-                        file.nombre.length > 15 ? {fontSize: "12px"} : {}
+                        file.nombre.length > 15 ? {fontSize: "10px"} : {}
                       }>{file.nombre}</p>
                     </div>
                     <div class="cont_header_cont_img">

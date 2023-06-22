@@ -70,6 +70,7 @@ export default function PanelFiles({ files, findFile, onReload, deleteFile, down
             }
           </p>
         </div>
+        <div className="cont-btns">
         <Button
           className="btn-panel-files"
           color="orange"
@@ -105,6 +106,8 @@ export default function PanelFiles({ files, findFile, onReload, deleteFile, down
         >
           Buscar Archivo..
         </Button>
+        </div>
+
       </div>
 
 
