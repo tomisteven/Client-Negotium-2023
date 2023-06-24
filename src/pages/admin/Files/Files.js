@@ -10,7 +10,6 @@ import Swal from "sweetalert2";
 import PanelFiles from "./Components/PanelFiles";
 import ItemFile from "./Components/ItemFile";
 import Loading from "../../../Components/Admin/Loader/Loading";
-
 const filesController = new Files();
 export function Files_c() {
   const { accesToken, user } = useAuth();
@@ -19,25 +18,43 @@ export function Files_c() {
   const [filter, setFilter] = React.useState("Todos");
   const [loading, setLoading] = React.useState(false);
   const [files, setFiles] = React.useState([]);
+  const [isDownloading, setIsDownloading] = React.useState(false);
 
   const onReload = () => {
     setReload(!reload);
   };
 
-  const downdoaldFile = (file) => {
-    const url = file; // Obtienes la URL de la imagen del objeto
 
-    fetch(url)
-      .then((response) => response.blob())
-      .then((blob) => {
-        const downloadLink = document.createElement("a");
-        downloadLink.href = URL.createObjectURL(blob);
-        downloadLink.download = "nombre_archivo.jpg"; // el nombre que tendrá el archivo descargado
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
-      });
-  };
+
+const downloadFile = async (file, name) => {
+  if (isDownloading) {
+    return; // Si ya hay una descarga en curso, no hacemos nada
+  }
+
+  setIsDownloading(true);
+
+  try {
+    const response = await fetch(file);
+    const blob = await response.blob();
+    const fileUrl = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = fileUrl;
+    a.download = name;
+    a.style.display = "none";
+    document.body.appendChild(a);
+
+    a.click();
+
+    document.body.removeChild(a);
+    URL.revokeObjectURL(fileUrl);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    setIsDownloading(false);
+  }
+};
+
 
   React.useEffect(() => {
     (async () => {
@@ -49,9 +66,7 @@ export function Files_c() {
   }, [reload]);
 
   if (loading || typeof files === "undefined") {
-    return (
-      <Loading obscuro={user.obscuro} text={"Cargando Archivos.."} />
-    );
+    return <Loading obscuro={user.obscuro} text={"Cargando Archivos.."} />;
   }
 
   const findFile = (type) => {
@@ -128,16 +143,16 @@ export function Files_c() {
           findFile={findFile}
           onReload={onReload}
           deleteFile={deleteFile}
-          downdoaldFile={downdoaldFile}
+          downdoaldFile={downloadFile}
         />
-        <div class="cont-files-list-files">
+        <div className="cont-files-list-files">
           {files.length > 0 ? (
             files.map((file, index) => {
               return (
                 <ItemFile
                   key={index}
                   file={file}
-                  downdoaldFile={downdoaldFile}
+                  downdoaldFile={downloadFile}
                   deleteFile={deleteFile}
                 />
               );
