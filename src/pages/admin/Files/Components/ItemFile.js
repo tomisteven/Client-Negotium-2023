@@ -42,6 +42,9 @@ export default function ItemFile({ file, downdoaldFile, deleteFile }) {
         <Button
           size="mini"
           icon="download"
+          disabled={
+            window.innerWidth < 768 ? true : false
+          }
           color="green"
           onClick={
             () => {downdoaldFile(file.url, file.nombre)}

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Button, Modal} from "semantic-ui-react";
-import { toast, ToastContainer } from "react-toastify";
+import { Button, Icon, Modal} from "semantic-ui-react";
 import Swal from "sweetalert2";
 import { useAuth } from "../../../../hooks/useAuth";
 import axios from "axios";
 import Dropzone from "react-dropzone";
 import "./modalNewFile.css";
+import { ColorRing } from "react-loader-spinner";
 
 export default function ModalNewFile({ open, setOpen, onReload }) {
   const { accesToken } = useAuth();
@@ -54,8 +54,14 @@ export default function ModalNewFile({ open, setOpen, onReload }) {
 
     try {
       const res = await axios.post(url, formData, config);
-      if (res.ok) {
-        toast.success("Archivo Guardado");
+      console.log(res);
+       if (res.data.ok) {
+        Swal.fire({
+          icon: "success",
+          title: "Archivo agregado correctamente",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         setLoading(false);
         cancell();
         onReload();
@@ -155,8 +161,16 @@ export default function ModalNewFile({ open, setOpen, onReload }) {
                 </div>
               )}
             </Dropzone>
-            <button className="btn-submit-file" type="submit" disabled={!image}>
-              {loading ? "Guardando..." : "Guardar Archivo"}
+            <button className="btn-submit-file" style={{
+              backgroundColor: loading ? "#FFFFFF" : "#2185D0",
+            }}  type="submit" disabled={!image}>
+              {loading ? <ColorRing
+              color="#ffffff"
+              height={40}
+              width={40}
+              />
+
+              : "Guardar Archivo"}
             </button>
           </form>
         </Modal.Content>
@@ -167,7 +181,7 @@ export default function ModalNewFile({ open, setOpen, onReload }) {
           </Button>
         </Modal.Actions>
       </Modal>
-      <ToastContainer />
+
     </>
   );
 }

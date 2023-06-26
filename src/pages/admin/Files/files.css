@@ -5,6 +5,7 @@
   flex-direction: row;
   align-items: center;
   margin-top: -20px;
+  background-color: #F0F3F4;
 }
 .cont-files-list-files {
   width: 85%;
