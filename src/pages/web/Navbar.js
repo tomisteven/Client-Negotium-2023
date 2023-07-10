@@ -34,8 +34,27 @@ function Navbar() {
         </Link>
       </div>
       <div class="btn-actions-web">
-        <Button w="100px" h="30px" bl="linear-gradient(to right, hsl(130, 82%, 31%) ,hsl(158, 94%, 37%))" text={"Login"} fnt="14px" />
-        <Button w="130px" h="30px" bl="linear-gradient(to right, hsl(26, 100%, 64%) ,hsl(26, 100%, 46%))" ml="15px" text={"Registrarse"} fnt="14px" />
+        <Button
+          onclick={() => {
+            window.location.href = "/#/admin/dashboard";
+          }}
+          w="100px"
+          h="30px"
+          bl="linear-gradient(to right, hsl(130, 82%, 31%) ,hsl(158, 94%, 37%))"
+          text={"Login"}
+          fnt="14px"
+        />
+        <Button
+          onclick={() => {
+            window.location.href = "/#/admin/dashboard";
+          }}
+          w="130px"
+          h="30px"
+          bl="linear-gradient(to right, hsl(26, 100%, 64%) ,hsl(26, 100%, 46%))"
+          ml="15px"
+          text={"Registrarse"}
+          fnt="14px"
+        />
       </div>
     </nav>
   );
