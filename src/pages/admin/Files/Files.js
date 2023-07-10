@@ -2,10 +2,10 @@ import React from "react";
 import "./files.css";
 import { Files } from "../../../api/files";
 import { useAuth } from "../../../hooks";
-import { Button, Icon } from "semantic-ui-react";
-import { Dimmer, Loader } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
+
 import TitleHeader from "../Clients/Components/Title-head/TitleHeader";
-import img_files from "../../../assets/Negotium Assets/archivo-pdf.png";
+
 import Swal from "sweetalert2";
 import PanelFiles from "./Components/PanelFiles";
 import ItemFile from "./Components/ItemFile";
@@ -24,37 +24,34 @@ export function Files_c() {
     setReload(!reload);
   };
 
+  const downloadFile = async (file, name) => {
+    if (isDownloading) {
+      return; // Si ya hay una descarga en curso, no hacemos nada
+    }
 
+    setIsDownloading(true);
 
-const downloadFile = async (file, name) => {
-  if (isDownloading) {
-    return; // Si ya hay una descarga en curso, no hacemos nada
-  }
+    try {
+      const response = await fetch(file);
+      const blob = await response.blob();
+      const fileUrl = URL.createObjectURL(blob);
 
-  setIsDownloading(true);
+      const a = document.createElement("a");
+      a.href = fileUrl;
+      a.download = name;
+      a.style.display = "none";
+      document.body.appendChild(a);
 
-  try {
-    const response = await fetch(file);
-    const blob = await response.blob();
-    const fileUrl = URL.createObjectURL(blob);
+      a.click();
 
-    const a = document.createElement("a");
-    a.href = fileUrl;
-    a.download = name;
-    a.style.display = "none";
-    document.body.appendChild(a);
-
-    a.click();
-
-    document.body.removeChild(a);
-    URL.revokeObjectURL(fileUrl);
-  } catch (error) {
-    console.log(error);
-  } finally {
-    setIsDownloading(false);
-  }
-};
-
+      document.body.removeChild(a);
+      URL.revokeObjectURL(fileUrl);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   React.useEffect(() => {
     (async () => {
