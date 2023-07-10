@@ -1,16 +1,22 @@
-.features-flex-web{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: -35px;
-    z-index: 12;
-    position: relative;
+.features-flex-web {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -35px;
+  z-index: 12;
+  position: relative;
 }
-@media (max-width: 750px){
-    .features-flex-web{
-        flex-direction: column;
-    }
-    .mob-marg-web{
-        margin-top: 62px;
-    }
+@media (max-width: 750px) {
+  .features-flex-web {
+    flex-direction: column;
+  }
+  .mob-marg-web {
+    margin-top: 62px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 550px) {
+  .features-web {
+    margin-bottom: -100px;
+  }
 }

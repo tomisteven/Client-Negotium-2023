@@ -106,3 +106,25 @@
     margin-bottom: 10px;
   }
 }
+
+@media only screen and (min-width: 320px) and (max-width: 550px) {
+  .img-footer-web {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -100px;
+  }
+  .footer-contanier-web {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .footer-flex-web p {
+    text-align: center;
+    font-size: 15px;
+  }
+}

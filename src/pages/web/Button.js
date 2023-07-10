@@ -10,7 +10,7 @@ function Button({text,classSize,w, h, fnt, ml, mr, bl, onclick, mt}){
             marginLeft: ml,
             marginRight: mr,
             background: bl,
-            marginTop: mt,
+            marginTop: mt
 
         }} className="button-web">{text}</button>
     );

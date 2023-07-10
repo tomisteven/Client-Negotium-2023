@@ -24,6 +24,23 @@ width: 130px;
     }
 }
 
+@media (max-width: 550px){
+    .links-web{
+        display: none;
+    }
+    .nav-web{
+        flex-direction: column;
+    }
+
+    .logo-web{
+        margin-bottom: -10px;
+        margin-top: -40px;
+        width: 150px;
+    }
+
+
+}
+
 
 .link-item-web:hover{
     opacity: 0.5;

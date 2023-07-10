@@ -14,7 +14,13 @@ function IntroContainer(){
             <h1>Bienvenidos a Negotium!
             </h1>
             <p>Negotium Gestiona tu negocio de manera eficiente. Clientes, deudas, servicios, historial, turnos, archivos. Disfruta de nuestra plataforma gratuita y flexible con planes estándar, gratis y premium. Potencia tu productividad hoy mismo.</p>
-            <Button text='Registrarme' h={"40px"} onclick={comenzar} />
+            {/* <Button classSize="btn-introContainer" text='Registrarme' h={"40px"} onclick={comenzar} /> */}
+            <button style={{
+                width: '150px',
+                height: '40px',
+                fontSize:'15px',
+                marginTop: '20px',
+            }} className='btn-introContainer'> Registrarme </button>
             </div>
             <img src={img_intro} alt='illustration-intro' />
         </div>

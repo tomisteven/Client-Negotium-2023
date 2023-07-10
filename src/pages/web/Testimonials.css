@@ -22,8 +22,25 @@
 @media (max-width: 750px){
     .testimonials-web {
         margin-top: 280px;
-        background: url(http://localhost:3000/images/bg-quotes.png) no-repeat top left;
         background-position: 55px 4px;
         padding: 20px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 550px){
+    .testimonials-web{
+        width: 100%;
+        margin-top: 150px;
+        margin-bottom: -230px;
+        background-position: 55px 4px;
+        padding: 20px;
+    }
+    .title-web{
+        margin-top: 50px;
+        font-size: 25px;
+        margin-bottom: -100px;
+        font-weight: 700;
+        color: #2cceff;
+        text-align: center;
     }
 }

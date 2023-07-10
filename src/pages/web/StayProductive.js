@@ -14,43 +14,43 @@ function StayProductive() {
         <div className="stay-r-web">
           <h1>Se productivo con estas funciones</h1>
           <p>
-            <span>Agregar clientes: </span> Registra nuevos clientes en tu base
+            <span className="span-productive">Agregar clientes: </span> Registra nuevos clientes en tu base
             de datos.
           </p>
           <p>
-            <span>Editar clientes:</span> Actualiza la información y detalles de
+            <span className="span-productive">Editar clientes:</span> Actualiza la información y detalles de
             tus clientes.
           </p>
           <p>
-            <span>Eliminar clientes:</span> Elimina clientes de tu lista cuando
+            <span className="span-productive">Eliminar clientes:</span> Elimina clientes de tu lista cuando
             sea necesario.
           </p>
           <p>
-            <span>Ver información detallada:</span> Accede a los detalles
+            <span className="span-productive">Ver información detallada:</span> Accede a los detalles
             completos de cada cliente.
           </p>
           <p>
-            <span>Gestionar deudas:</span> Registra y controla las deudas
+            <span className="span-productive">Gestionar deudas:</span> Registra y controla las deudas
             asociadas a tus clientes.
           </p>
           <p>
-            <span>Gestionar servicios:</span> Administra los servicios que
+            <span className="span-productive">Gestionar servicios:</span> Administra los servicios que
             ofreces a tus clientes.
           </p>
           <p>
-            <span>Ver historial:</span> Accede al historial completo de
+            <span className="span-productive">Ver historial:</span> Accede al historial completo de
             interacciones con cada cliente.
           </p>
           <p>
-            <span>Programar Turnos:</span> Programa y organiza los próximos
+            <span className="span-productive">Programar Turnos:</span> Programa y organiza los próximos
             turnos a atender.
           </p>
           <p>
-            <span>Guardar archivos:</span> Almacena y organiza facturas,
+            <span className="span-productive">Guardar archivos:</span> Almacena y organiza facturas,
             resúmenes, comprobantes y otros documentos.
           </p>
           <p>
-            <span>Agregar recordatorios:</span> Guarda notas y recordatorios
+            <span className="span-productive">Agregar recordatorios:</span> Guarda notas y recordatorios
             importantes relacionados con tu negocio.
           </p>
         </div>

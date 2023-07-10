@@ -23,15 +23,7 @@ function Testimonial({ text, img, auth = [], job, title, price }) {
           </div>
         ))}
       </div>
-      <Button
-        text={"Adquirir"}
-        h={"30px"}
-        w={"170px"}
-        fnt={"15px"}
-        ml={"75px"}
-        mr={"15px"}
-        mt={"25px"}
-      />
+      <button className="btn-adquirir-testimonial">Adquirir</button>
     </div>
   );
 }

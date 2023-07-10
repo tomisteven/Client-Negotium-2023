@@ -67,3 +67,22 @@
         height: 25px;
     }
 }
+
+
+@media only screen and (min-width: 320px) and (max-width: 550px){
+    .stayProductive-web{
+        width: 100%;
+    }
+    .stay-r-web h1{
+        font-size: 2rem;
+        line-height: 40px;
+    }
+
+    .stay-r-web p{
+        font-size: 13px;
+        line-height: 25px;
+    }
+    .stay-r-web .span-productive{
+        font-size: 15px;
+    }
+}
