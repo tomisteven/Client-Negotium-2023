@@ -1,0 +1,26 @@
+.button-web{
+    background-image: linear-gradient(to right, hsl(241, 100%, 68%) ,hsl(260, 100%, 46%));
+    width: 280px;
+    height: 55px;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.button-web:hover{
+    background-image: linear-gradient(to right, hsl(241, 100%, 68%) ,hsl(260, 100%, 46%));
+}
+.email-btn{
+    width: 200px;
+}
+@media (max-width: 750px){
+    .introContainer-web button{
+        height: 90px;
+        width: 70%;
+        font-size: 23px;
+        margin-top: 50px;
+    }
+}

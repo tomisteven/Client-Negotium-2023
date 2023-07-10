@@ -3,9 +3,6 @@ import { Routes, Route } from "react-router-dom";
 //import {map} from "lodash"
 import {
   Auth,
-  Users,
-  Courses,
-  Menu,
   Recordatorios_,
   Dashboard,
   Clients,
@@ -18,8 +15,6 @@ import {
 import { AdminLayout } from "../layouts";
 import { useAuth } from "../hooks";
 import Services from "../pages/admin/Services/Services";
-import TableClients from "../pages/admin/Clients/TableClients/TableClients";
-
 
 //si el usuario esta logeado y es admin, entonces se le muestra el layout de admin
 

@@ -1,0 +1,29 @@
+.testimonials-web{
+    margin-top: 150px;
+    display: flex;
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    background: url('http://localhost:3002/images/bg-quotes.png')  no-repeat top left;
+}
+.title-web{
+    margin-top: 50px;
+    font-size: 30px;
+    margin-bottom: -100px;
+    font-weight: 700;
+    color: #2cceff;
+    text-align: center;
+}
+@media (max-width: 950px){
+    .testimonials-web{
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 750px){
+    .testimonials-web {
+        margin-top: 280px;
+        background: url(http://localhost:3000/images/bg-quotes.png) no-repeat top left;
+        background-position: 55px 4px;
+        padding: 20px;
+    }
+}

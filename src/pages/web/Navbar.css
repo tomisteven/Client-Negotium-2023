@@ -1,0 +1,31 @@
+.nav-web{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: -20px;
+}
+.logo-web{
+width: 130px;
+
+}
+.links-web a{
+    padding: 0 20px;
+    opacity: .9;
+}
+.links-web a:last-child{
+    padding-right: 0;
+}
+@media (max-width: 750px){
+    .nav-web{
+        padding-top: 50px;
+    }
+    .links-web a{
+        font-size: 23px;
+    }
+}
+
+
+.link-item-web:hover{
+    opacity: 0.5;
+    transition: 0.5s;
+}

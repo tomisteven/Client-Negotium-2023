@@ -1,11 +1,11 @@
 import React from "react";
-import { Dimmer, Loader } from "semantic-ui-react";
+import { Dimmer} from "semantic-ui-react";
 import { RotatingTriangles } from "react-loader-spinner";
 
 
 export default function Loading({ obscuro, text }) {
   return (
-    <div className="conteiner-files">
+    <div className="conteiner-files-v2">
       <Dimmer active inverted>
         <RotatingTriangles
           visible={true}
@@ -20,16 +20,3 @@ export default function Loading({ obscuro, text }) {
   );
 }
 
-
-
-/* <Dimmer
-        style={{
-          backgroundColor: obscuro ? "#424E5E" : "#ffffff",
-        }}
-        active
-        inverted
-      >
-        <Loader style={{
-            color: obscuro ? "#ffffff" : "#000000",
-        }} inverted>{text}</Loader>
-      </Dimmer> */
