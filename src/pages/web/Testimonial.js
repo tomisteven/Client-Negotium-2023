@@ -23,7 +23,10 @@ function Testimonial({ text, img, auth = [], job, title, price }) {
           </div>
         ))}
       </div>
-      <button className="btn-adquirir-testimonial">Adquirir</button>
+      <Button onclick={
+        () => {
+          window.location.href = "/#/admin/dashboard"
+      }} h="33px" w="200px" m="50px" text="Adquirir" fnt="15px"></Button>
     </div>
   );
 }

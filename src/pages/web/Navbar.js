@@ -51,7 +51,7 @@ function Navbar() {
           w="130px"
           h="30px"
           bl="linear-gradient(to right, hsl(26, 100%, 64%) ,hsl(26, 100%, 46%))"
-          ml="15px"
+          ml="25px"
           text={"Registrarse"}
           fnt="14px"
         />

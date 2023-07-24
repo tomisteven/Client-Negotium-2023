@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Card, Input, Button, Dropdown } from "semantic-ui-react";
+import { Card} from "semantic-ui-react";
 import { useAuth } from "../../../hooks";
-import { ColorRing } from "react-loader-spinner";
+import "./responsive.css"
 import { Auth } from "../../../api";
 import Swal from "sweetalert2";
 import RecaudacionGlobal from "./ItemsComercial/RecaudacionGlobal";
@@ -54,12 +54,20 @@ export default function InfoComercial() {
   };
 
   return (
-    <div style={{
-      backgroundColor: user.obscuro ? "#3B4554" : "#00000005"
-    }} class="info-comercial">
-      <h4 className="title-info-user" style={{
-        color: user.obscuro ? "white" : "#000000"
-      }}>Informacion Comercial</h4>
+    <div
+      style={{
+        backgroundColor: user.obscuro ? "#3B4554" : "#00000005",
+      }}
+      class="info-comercial"
+    >
+      <h4
+        className="title-info-user"
+        style={{
+          color: user.obscuro ? "white" : "#000000",
+        }}
+      >
+        Informacion Comercial
+      </h4>
       <Card.Group centered>
         <RecaudacionGlobal updateUser={updateUser} />
         <DeudasTotales updateUser={updateUser} />

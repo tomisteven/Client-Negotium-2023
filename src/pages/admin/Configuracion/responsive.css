@@ -1,0 +1,33 @@
+@media only screen and (min-width: 320px) and (max-width: 520px) {
+  .cont-profile-configuration {
+    flex-direction: column;
+    align-items: center;
+  }
+  .user-user-img {
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+  }
+  .user-info {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+  }
+  .info-comercial {
+    width: 100%;
+    height: auto;
+    margin-top: 25px;
+    padding-top: 15px;
+  }
+  .user-user-img-l {
+    width: 100%;
+  }
+  .input-info{
+    margin-bottom: 5px;
+  }
+  .card-responsive{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+  }
+}

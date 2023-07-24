@@ -23,7 +23,7 @@ export default function DeudasTotales({ updateUser}) {
           />
         </Card>
       ) : (
-        <Card style={{
+        <Card  style={{
           backgroundColor: user.obscuro ? "#3B4554" : "white",
       }} >
           <Card.Content>

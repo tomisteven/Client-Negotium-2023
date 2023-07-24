@@ -79,7 +79,7 @@ export default function ItemRecordatorio({
         />
       </div>
       <div className="item-info" style={{
-        backgroundColor: recordatorio.completed ? "#b3e0c8" : "#f9caca",
+        backgroundColor: recordatorio.completed ? "#cfe3d8" : "#fae3e3",
       }}>
         <div class="nombre-description">
         <div

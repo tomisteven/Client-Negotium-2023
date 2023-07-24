@@ -3,10 +3,10 @@ import axios from "axios";
 import Dropzone from "react-dropzone";
 import Swal from "sweetalert2";
 import { useAuth } from "../../../hooks";
-import Loading from "../../../Components/Admin/Loader/Loading";
 import { Button } from "semantic-ui-react";
 import { Circles } from "react-loader-spinner";
 import "./UpdateAvatar.css";
+import "./responsive.css"
 
 export default function UpdateAvatar() {
   const { user, accesToken } = useAuth(); //obtenemos el usuario logueado del contexto de autenticacion
@@ -85,12 +85,22 @@ export default function UpdateAvatar() {
       ) : (
         <div class="user-user-img">
           <form onSubmit={onSubmit}>
-            <h4 style={{
-        color: user.obscuro ? "white" : "#000000"
-      }} className="title-user-img">Avatar</h4>
-            <div style={{
-        border: user.obscuro ? "2px dashed white" : "2px dashed #000000"
-      }} class="user-img">
+            <h4
+              style={{
+                color: user.obscuro ? "white" : "#000000",
+              }}
+              className="title-user-img"
+            >
+              Avatar
+            </h4>
+            <div
+              style={{
+                border: user.obscuro
+                  ? "2px dashed white"
+                  : "2px dashed #000000",
+              }}
+              class="user-img"
+            >
               <img
                 src={image ? URL.createObjectURL(image) : user.avatar}
                 className="user-img-img"
@@ -100,9 +110,12 @@ export default function UpdateAvatar() {
               {({ getRootProps, getInputProps }) => (
                 <div {...getRootProps()} className="cont-btn-avatar">
                   <input {...getInputProps()} />
-                  <p style={{
-        color: user.obscuro ? "white" : "#000000"
-      }} className="p-imagen-select">
+                  <p
+                    style={{
+                      color: user.obscuro ? "white" : "#000000",
+                    }}
+                    className="p-imagen-select"
+                  >
                     Haz clic para seleccionar una imagen
                   </p>
                 </div>

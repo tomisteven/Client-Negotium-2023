@@ -3,6 +3,7 @@ import TitleHeader from "../Clients/Components/Title-head/TitleHeader";
 import img_configuracion from "../../../assets/Negotium Assets/services.png";
 import { useAuth } from "../../../hooks";
 import "./Configuracion.css";
+import "./responsive.css"
 import UpdateUserInfo from "./UpdateUserInfo";
 
 import {

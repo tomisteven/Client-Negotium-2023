@@ -20,25 +20,25 @@ export default function UpdateUserInfo() {
     password: "",
   });
 
-    const updateUserInfo = async() => {
+  const updateUserInfo = async () => {
     setLoading(true);
     if (formData.password === "") {
-        delete formData.password;
+      delete formData.password;
     }
     if (formData.pass_aplication === "") {
-        delete formData.pass_aplication;
+      delete formData.pass_aplication;
     }
     const response = await authController.updateUser(formData, accesToken);
     if (response) {
-        await Swal.fire({
-            icon: "success",
-            title: "Datos Actualizados",
-            showConfirmButton: false,
-            timer: 1500,
-        });
+      await Swal.fire({
+        icon: "success",
+        title: "Datos Actualizados",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
     setLoading(false);
-}
+  };
 
   return (
     <>
@@ -56,9 +56,14 @@ export default function UpdateUserInfo() {
         </div>
       ) : (
         <div className="user-info">
-          <h4 className="title-info-user" style={{
-            color: user.obscuro ? "#fff" : "#000",
-          }}>Informacion del Usuario</h4>
+          <h4
+            className="title-info-user"
+            style={{
+              color: user.obscuro ? "#fff" : "#000",
+            }}
+          >
+            Informacion del Usuario
+          </h4>
           <div class="item-input-info">
             <Input
               className="input-info"
@@ -89,9 +94,16 @@ export default function UpdateUserInfo() {
               value={formData.email}
             />
           </div>
-          <div class="item-input-info">
+          <div class="item-input-info-c">
             <div class="info-pass">
-              <label  style={{ color: "#000", padding: "5px", color: user.obscuro ? "white" : "black" }} for="">
+              <label
+                style={{
+                  color: "#000",
+                  padding: "5px",
+                  color: user.obscuro ? "white" : "black",
+                }}
+                for=""
+              >
                 Contraseña del Correo para emails
               </label>
               <button className="btn-question">
@@ -116,9 +128,16 @@ export default function UpdateUserInfo() {
               />
             </Input>
           </div>
-          <div class="item-input-info">
-          <div class="info-pass">
-              <label style={{ color: "#000", padding: "5px", color: user.obscuro ? "white" : "black" }} for="">
+          <div class="item-input-info-c">
+            <div class="info-pass">
+              <label
+                style={{
+                  color: "#000",
+                  padding: "5px",
+                  color: user.obscuro ? "white" : "black",
+                }}
+                for=""
+              >
                 Contraseña Usuario
               </label>
               <button className="btn-question">
@@ -132,6 +151,7 @@ export default function UpdateUserInfo() {
               }}
               value={formData.password}
               type="password"
+              className="input-info-pass"
             >
               <input type={showPasswordP ? "text" : "password"} />
               <Button
@@ -152,8 +172,7 @@ export default function UpdateUserInfo() {
               }
               className="btn-save-pass"
               onClick={() => {
-                updateUserInfo()
-
+                updateUserInfo();
               }}
               color="green"
             >

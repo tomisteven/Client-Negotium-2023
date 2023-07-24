@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../../../hooks/useAuth";
 import { Recordatorios } from "../../../api/recordatorios";
 import "./recordatorios.css";
+import "./responsive.css"
+
 import TitleHeader from "../Clients/Components/Title-head/TitleHeader";
 import ModalEditRecordatorio from "./ModalEditRecordatorio";
 import ItemRecodatorio from "./ItemRecordatorio";
@@ -146,44 +148,59 @@ export function Recordatorios_() {
         obscuro={user.obscuro}
       />
       <div class="cont-btn-add">
-        <Button
-          className="btn-add"
-          color="green"
-          onClick={() => {
-            setOpen(true);
-            setCreando(true);
-            setRecordatorio({});
-          }}
-        >
+        <button
+        className="btn-add-new"
+        style={
+          {
+            backgroundColor: "#2aa839",
+            color: "#ffffff",
+            border: "none",
+            borderRadius: "5px",
+          }
+        }
+        onClick={() => {
+          setOpen(true);
+          setCreando(true);
+          setRecordatorio({});
+        }}>
           Agregar Recordatorio
-        </Button>
-        <Button
-          className="btn-add"
-          primary
-          onClick={() => {
-            anularTodos();
-          }}
-        >
+        </button>
+        <button style={
+          {
+            backgroundColor: "#0d6efd",
+            color: "#ffffff",
+            border: "none",
+            borderRadius: "5px",
+          }
+        } onClick={() => {
+           anularTodos();
+          }} className="btn-add-new">
           Anular Todos
-        </Button>
-        <Button
-          className="btn-add"
-          color="purple"
-          onClick={() => {
-            completarTodos();
-          }}
-        >
+        </button>
+        <button style={
+          {
+            backgroundColor: "#fc853a",
+            color: "#ffffff",
+            border: "none",
+            borderRadius: "5px",
+          }
+        } onClick={() => {
+           completarTodos();
+          }} className="btn-add-new">
           Completar Todos
-        </Button>
-        <Button
-          className="btn-add"
-          color="youtube"
-          onClick={() => {
-            borrarTodos();
-          }}
-        >
+        </button>
+        <button style={
+          {
+            backgroundColor: "#e65050",
+            color: "#ffffff",
+            border: "none",
+            borderRadius: "5px",
+          }
+        } onClick={() => {
+           borrarTodos();
+          }} className="btn-add-new">
           Borrar Todos
-        </Button>
+        </button>
       </div>
 
       <div class="recordatorios-container">

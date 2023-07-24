@@ -1,0 +1,70 @@
+@media only screen and (min-width: 320px) and (max-width: 520px){
+    .cont-btn-add{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 30px;
+        margin-top: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn-add-new{
+        width: 100%;
+        height: 30px;
+        background-color: #0d6efd;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        font-size: 10px;
+        cursor: pointer;
+    }
+    .item-cont{
+        background-color: rgba(0, 4, 255, 0.08);
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .item-img{
+        display: none;
+    }
+    .item-info{
+        width: 100%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cont-fechas{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .item-actions{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nombre-description{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
