@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
 import { useState, useEffect } from "react";
 import { useAuth } from "../../../hooks/useAuth";
 import { Recordatorios } from "../../../api/recordatorios";
@@ -129,7 +128,7 @@ export function Recordatorios_() {
     setLoading(true);
     recordatoriosController.getRecordatorios(accesToken)
       .then((res) => {
-        setData(res);
+        setData(res.reverse());
       })
     setLoading(false);
   }, [reload]);

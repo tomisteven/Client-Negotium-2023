@@ -1,12 +1,16 @@
 import React from "react";
 import { Dimmer} from "semantic-ui-react";
 import { RotatingTriangles } from "react-loader-spinner";
-
+import "./loading.css"
+import { useAuth } from "../../../hooks/useAuth";
 
 export default function Loading({ obscuro, text }) {
+
+  const { user } = useAuth();
+
   return (
-    <div className="conteiner-files-v2">
-      <Dimmer active inverted>
+    <div className="loading-container">
+
         <RotatingTriangles
           visible={true}
           height="80"
@@ -15,7 +19,7 @@ export default function Loading({ obscuro, text }) {
           wrapperStyle={{}}
           wrapperClass="blocks-wrapper"
         />
-        </Dimmer>
+
     </div>
   );
 }

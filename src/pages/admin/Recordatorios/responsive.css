@@ -1,4 +1,8 @@
 @media only screen and (min-width: 320px) and (max-width: 520px){
+
+    .recordatorios-container{
+        height: auto;
+    }
     .cont-btn-add{
         width: 100%;
         margin-left: auto;

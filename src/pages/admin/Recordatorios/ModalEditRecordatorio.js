@@ -25,11 +25,10 @@ export default function ModalEditRecordatorio({
 }) {
   const { accesToken } = useAuth();
   const [loadButton, setLoadButton] = React.useState(false);
-  //console.log(recordatorio, creando);
   const [formReordatorio, setFormRecordatorio] = React.useState({
-    nombre: "",
-    descripcion: "",
-    fechaLimite: "",
+    nombre: recordatorio ? recordatorio.nombre : "",
+    descripcion: recordatorio ? recordatorio.descripcion : "",
+    fechaLimite: recordatorio ? recordatorio.fechaLimite : "",
   });
 
   React.useEffect(() => {
@@ -99,7 +98,7 @@ export default function ModalEditRecordatorio({
               <label>Nombre</label>
               <Input
                 placeholder="Nombre"
-                value={creando ? formReordatorio.nombre : recordatorio.nombre}
+                value={formReordatorio.nombre}
                 onChange={(e) => {
                   setFormRecordatorio({
                     ...formReordatorio,
@@ -113,11 +112,7 @@ export default function ModalEditRecordatorio({
               <TextArea
                 type="message"
                 placeholder="Descripcion"
-                value={
-                  creando
-                    ? formReordatorio.descripcion
-                    : recordatorio.descripcion
-                }
+                value={formReordatorio.descripcion}
                 onChange={(e) => {
                   setFormRecordatorio({
                     ...formReordatorio,
@@ -150,25 +145,24 @@ export default function ModalEditRecordatorio({
                   }}
                 />
               </Form.Field>
-              {
-                creando && (<Form.Field>
-                    <label>Prioridad</label>
-                    <Select
-                      placeholder="Prioridad"
-                      options={[
-                        { key: "alta", value: true, text: "Alta" },
-                        { key: "baja", value: false, text: "Baja" },
-                      ]}
-                      onChange={(e, data) => {
-                        setFormRecordatorio({
-                          ...formReordatorio,
-                          prioridad: data.value,
-                        });
-                      }}
-                    />
-                  </Form.Field>
-                )
-              }
+              {creando && (
+                <Form.Field>
+                  <label>Prioridad</label>
+                  <Select
+                    placeholder="Prioridad"
+                    options={[
+                      { key: "alta", value: true, text: "Alta" },
+                      { key: "baja", value: false, text: "Baja" },
+                    ]}
+                    onChange={(e, data) => {
+                      setFormRecordatorio({
+                        ...formReordatorio,
+                        prioridad: data.value,
+                      });
+                    }}
+                  />
+                </Form.Field>
+              )}
             </Form.Group>
           </Form>
         </Modal.Content>

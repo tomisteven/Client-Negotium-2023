@@ -43,6 +43,7 @@ function Navbar() {
           bl="linear-gradient(to right, hsl(130, 82%, 31%) ,hsl(158, 94%, 37%))"
           text={"Login"}
           fnt="14px"
+          mr="15px"
         />
         <Button
           onclick={() => {

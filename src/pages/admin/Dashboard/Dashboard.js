@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./dashboard.css";
 import { useAuth } from "../../../hooks";
-/* import { CountItemsServices } from "./Components/CountServicesItem";
-import { CountClientProveedor } from "./Components/CountItemsClientsProveedors";
-import { CountFiles } from "./Components/CountFiles"; */
 import NewItemDash from "./Components/NewItemDash";
 import img_view from "../../../assets/Negotium Assets/see.webp";
 import avatarM from "../../../assets/Negotium Assets/perfil.webp";
@@ -23,22 +20,24 @@ import turnos from "../../../assets/Negotium Assets/new-item-turnos.png";
 import { ListClients } from "./Components/ListClients";
 import { ListRecordatorios } from "./Components/ListRecordatorios";
 import { ServiceItem } from "./Components/ServicesItem";
-import { User } from "../../../api";
+import { User, Client } from "../../../api";
+
 import { SearchRecordatorios } from "../../../Components/Admin/AdminLayout/SearchAddRecordatorios";
 import Loading from "../../../Components/Admin/Loader/Loading";
 
 const userController = new User();
+const clientController = new Client();
 export function Dashboard() {
-
   const { user, accesToken } = useAuth();
   const color = ["#010409", "#F0F3F4"];
   const [reload, setReload] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [userActive, setUserActive] = React.useState(user);
+  const [turnsAll, setTurnsAll] = React.useState([]);
 
   const membresia_active = userActive.membresias.find((m) => m.activa === true);
 
-  console.log(user);
+  //console.log(user);
 
   if (!user) {
     console.log("no hay usuario, redireccionando a login");
@@ -53,6 +52,8 @@ export function Dashboard() {
     (async () => {
       setLoading(true);
       const response = await userController.getMe(accesToken);
+      const response2 = await clientController.getAllServices(accesToken);
+      setTurnsAll(response2);
       setUserActive(response);
       makeAColor();
       setLoading(false);
@@ -104,15 +105,56 @@ export function Dashboard() {
     return colors;
   };
 
+  console.log(turnsAll
+    .filter((turn) => turn.date > Date.now().toString()).length
+    );
+
   return (
     <>
       <SearchRecordatorios onReload={onReload} />
       <div className="dashboard-panel">
-        <NewItemDash img={clients} title={"Total Clientes"} color="#6789e6" />
-        <NewItemDash img={services} title={"Servicios"} color="#ac58ed" />
-        <NewItemDash img={files} title={"Archivos"}  color={"#e89746"}/>
-        <NewItemDash img={alert} title={"Recordatorios"} color={"#4bbf4b"} />
-        <NewItemDash img={turnos} title={"Turnos"} color={"#d45353"} />
+        <NewItemDash
+          value={user.clientes.length + " / " + membresia_active.clientes_max}
+          img={clients}
+          title={"Total Clientes"}
+          color="#6789e6"
+        />
+        <NewItemDash
+          value={user.servicios.length + " / " + membresia_active.servicios_max}
+          img={services}
+          title={"Servicios"}
+          color="#ac58ed"
+        />
+        <NewItemDash
+          value={user.pdfs.length + " / " + membresia_active.archivos_max}
+          img={files}
+          title={"Archivos"}
+          color={"#e89746"}
+        />
+        <NewItemDash
+          value={
+            user.recordatorios.length +
+            " / " +
+            membresia_active.recordatorios_max
+          }
+          img={alert}
+          title={"Recordatorios"}
+          color={"#c2bf70"}
+        />
+        <NewItemDash
+          img={turnos}
+          value={turnsAll.filter((turn) => turn.date > Date.now().toString()).length}
+          title={"Turnos Completados"}
+          color={"#3dbf3d"}
+        />
+        <NewItemDash
+          img={turnos}
+          value={
+            turnsAll.filter((turn) => turn.date < Date.now().toString()).length
+          }
+          title={"Turnos Pendientes"}
+          color={"#d45353"}
+        />
       </div>
       <div className="dashboard-v2">
         <ListClients
@@ -160,53 +202,3 @@ export function Dashboard() {
     </>
   );
 }
-
-
-
-/*
-        <CountItemsServices
-          url_="/admin/services"
-          imgUp={img_up}
-          cont2={userActive.recaudado}
-          cont1={userActive.servicios.length || 0}
-          imgDown={img_down}
-          imgAdd={img_add}
-          img={img_services}
-          imgSee={img_view}
-          colors={"linear-gradient(to right, #e49eba, #b33863ae)"}
-          name="Services"
-        />
-        <CountClientProveedor
-          max_clients={membresia_active.clientes_max}
-          url_={"/admin/clients"}
-          img_add={img_add}
-          cont1={userActive.clientes.length || 0}
-          img_down={img_down}
-          img_up={img_up}
-          img_see={img_view}
-          img={img_client}
-          name="Clientes"
-          icon={"users"}
-          colors={"linear-gradient(to right, #9B77D6, #2c0073c6)"}
-        />
-        <CountFiles
-          view_files={img_view_files}
-          up_file={up_file}
-          img_files={img_files}
-          name="Archivos"
-          icon={"folder open outline"}
-          colors={"linear-gradient(to right, #DD9E70, #ffb37c)"}
-        />
-        <CountClientProveedor
-          max_clients={membresia_active.recordatorios_max}
-          img_add={img_add}
-          cont1={userActive.recordatorios.length || 0}
-          img_down={img_down}
-          img_up={img_up}
-          img_see={img_view}
-          img={img_client}
-          name="Recordatorios"
-          icon={"alarm outline"}
-          colors={" linear-gradient(to right, #3B6BE7, #5786FF)"}
-        />
-*/
