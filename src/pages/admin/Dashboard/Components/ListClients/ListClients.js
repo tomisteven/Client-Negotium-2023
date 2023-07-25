@@ -136,7 +136,7 @@ export function ListClients({
                   size="mini"
                   color="green"
                   onClick={() => {
-                    window.location.href = `/admin/clientes`;
+                    window.location.href = `/#/admin/clientes`;
                   }}
                   className="btn-see"
                 >

@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./dashboard.css";
 import { useAuth } from "../../../hooks";
-import { CountItemsServices } from "./Components/CountServicesItem";
+/* import { CountItemsServices } from "./Components/CountServicesItem";
 import { CountClientProveedor } from "./Components/CountItemsClientsProveedors";
-import { CountFiles } from "./Components/CountFiles";
-
-import img_services from "../../../assets/Negotium Assets/box.webp";
-import img_up from "../../../assets/Negotium Assets/up.webp";
-import img_down from "../../../assets/Negotium Assets/down.webp";
+import { CountFiles } from "./Components/CountFiles"; */
+import NewItemDash from "./Components/NewItemDash";
 import img_view from "../../../assets/Negotium Assets/see.webp";
-import img_add from "../../../assets/Negotium Assets/more.webp";
-import img_client from "../../../assets/Negotium Assets/client.webp";
-import img_files from "../../../assets/Negotium Assets/folder.webp";
-import img_view_files from "../../../assets/Negotium Assets/contrato.webp";
-import up_file from "../../../assets/Negotium Assets/anadir.webp";
 import avatarM from "../../../assets/Negotium Assets/perfil.webp";
 import avatarF from "../../../assets/Negotium Assets/mujer.webp";
 import sinclientes from "../../../assets/Negotium Assets/add.webp";
@@ -22,6 +14,11 @@ import img_prioridad from "../../../assets/Negotium Assets/priority.webp";
 import img_alert from "../../../assets/Negotium Assets/senal-de-alerta.webp";
 import img_baja from "../../../assets/Negotium Assets/baja.webp";
 import img_sin_recordatorios from "../../../assets/Negotium Assets/comprobado.webp";
+import clients from "../../../assets/Negotium Assets/new-item-clients.png";
+import services from "../../../assets/Negotium Assets/new-item-ervices.png";
+import files from "../../../assets/Negotium Assets/new-item-files.png";
+import alert from "../../../assets/Negotium Assets/new-item-alert.png";
+import turnos from "../../../assets/Negotium Assets/new-item-turnos.png";
 
 import { ListClients } from "./Components/ListClients";
 import { ListRecordatorios } from "./Components/ListRecordatorios";
@@ -111,51 +108,11 @@ export function Dashboard() {
     <>
       <SearchRecordatorios onReload={onReload} />
       <div className="dashboard-panel">
-        <CountItemsServices
-          url_="/admin/services"
-          imgUp={img_up}
-          cont2={userActive.recaudado}
-          cont1={userActive.servicios.length || 0}
-          imgDown={img_down}
-          imgAdd={img_add}
-          img={img_services}
-          imgSee={img_view}
-          colors={"linear-gradient(to right, #e49eba, #b33863ae)"}
-          name="Services"
-        />
-        <CountClientProveedor
-          max_clients={membresia_active.clientes_max}
-          url_={"/admin/clients"}
-          img_add={img_add}
-          cont1={userActive.clientes.length || 0}
-          img_down={img_down}
-          img_up={img_up}
-          img_see={img_view}
-          img={img_client}
-          name="Clientes"
-          icon={"users"}
-          colors={"linear-gradient(to right, #9B77D6, #2c0073c6)"}
-        />
-        <CountFiles
-          view_files={img_view_files}
-          up_file={up_file}
-          img_files={img_files}
-          name="Archivos"
-          icon={"folder open outline"}
-          colors={"linear-gradient(to right, #DD9E70, #ffb37c)"}
-        />
-        <CountClientProveedor
-          max_clients={membresia_active.recordatorios_max}
-          img_add={img_add}
-          cont1={userActive.recordatorios.length || 0}
-          img_down={img_down}
-          img_up={img_up}
-          img_see={img_view}
-          img={img_client}
-          name="Recordatorios"
-          icon={"alarm outline"}
-          colors={" linear-gradient(to right, #3B6BE7, #5786FF)"}
-        />
+        <NewItemDash img={clients} title={"Total Clientes"} color="#6789e6" />
+        <NewItemDash img={services} title={"Servicios"} color="#ac58ed" />
+        <NewItemDash img={files} title={"Archivos"}  color={"#e89746"}/>
+        <NewItemDash img={alert} title={"Recordatorios"} color={"#4bbf4b"} />
+        <NewItemDash img={turnos} title={"Turnos"} color={"#d45353"} />
       </div>
       <div className="dashboard-v2">
         <ListClients
@@ -203,3 +160,53 @@ export function Dashboard() {
     </>
   );
 }
+
+
+
+/*
+        <CountItemsServices
+          url_="/admin/services"
+          imgUp={img_up}
+          cont2={userActive.recaudado}
+          cont1={userActive.servicios.length || 0}
+          imgDown={img_down}
+          imgAdd={img_add}
+          img={img_services}
+          imgSee={img_view}
+          colors={"linear-gradient(to right, #e49eba, #b33863ae)"}
+          name="Services"
+        />
+        <CountClientProveedor
+          max_clients={membresia_active.clientes_max}
+          url_={"/admin/clients"}
+          img_add={img_add}
+          cont1={userActive.clientes.length || 0}
+          img_down={img_down}
+          img_up={img_up}
+          img_see={img_view}
+          img={img_client}
+          name="Clientes"
+          icon={"users"}
+          colors={"linear-gradient(to right, #9B77D6, #2c0073c6)"}
+        />
+        <CountFiles
+          view_files={img_view_files}
+          up_file={up_file}
+          img_files={img_files}
+          name="Archivos"
+          icon={"folder open outline"}
+          colors={"linear-gradient(to right, #DD9E70, #ffb37c)"}
+        />
+        <CountClientProveedor
+          max_clients={membresia_active.recordatorios_max}
+          img_add={img_add}
+          cont1={userActive.recordatorios.length || 0}
+          img_down={img_down}
+          img_up={img_up}
+          img_see={img_view}
+          img={img_client}
+          name="Recordatorios"
+          icon={"alarm outline"}
+          colors={" linear-gradient(to right, #3B6BE7, #5786FF)"}
+        />
+*/

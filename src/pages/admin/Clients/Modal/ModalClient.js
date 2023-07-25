@@ -124,129 +124,163 @@ export function ModalClient({
             <Header>
               {modalClient.nombre} {modalClient.apellido}
             </Header>
-            <p>
+            <p
+              style={{
+                color: "black",
+              }}
+            >
               Telefono:{" "}
               <span className="span-modal">+54{modalClient.telefono}</span>
             </p>
-            <p>
+            <p
+              style={{
+                color: "black",
+              }}
+            >
               Telefono: <span className="span-modal">{modalClient.email}</span>
             </p>
-            <p>
+            <p
+              style={{
+                color: "black",
+              }}
+            >
               Direccion:{" "}
               <span className="span-modal"> {modalClient.direccion}</span>
             </p>
-            <p>
+            <p
+              style={{
+                color: "black",
+              }}
+            >
               Genero: <span className="span-modal"> {modalClient.genero}</span>
             </p>
-            <p>
+            <p
+              style={{
+                color: "black",
+              }}
+            >
               Deuda:{" "}
               <span className="span-modal"> $ {modalClient.deudaTotal}</span>
             </p>
-            <p>
+            <p
+              style={{
+                color: "black",
+              }}
+            >
               Gasto Total:{" "}
               <span className="span-modal">$ {modalClient.gastoTotal}</span>
             </p>
-            <p>
+            <p
+              style={{
+                color: "black",
+              }}
+            >
               Fecha de ingreso:{" "}
               <span className="span-modal">
                 {" "}
                 {parseFecha(modalClient.fecha)}
               </span>
             </p>
-            <p>
+            <p
+              style={{
+                color: "black",
+              }}
+            >
               ID: <span className="span-modal"> {modalClient._id}</span>
             </p>
           </Modal.Description>
           <div className="cont-2-modals">
-          <Modal.Content className="table-modal-cont">
-            <Header>Historial de Servicios / Productos</Header>
-            <Table inverted color="blue" celled>
-              <Table.Header className="table-modal-cont-header">
-                <Table.Row>
-                  <Table.HeaderCell>Servicio</Table.HeaderCell>
-                  <Table.HeaderCell>Fecha</Table.HeaderCell>
-                  <Table.HeaderCell>Costo</Table.HeaderCell>
-                  <Table.HeaderCell>Acciones</Table.HeaderCell>
-                </Table.Row>
-              </Table.Header>
-              <Table.Body className="body-table-modal">
-                {servicesOfClient.length > 0 ? (
-                  servicesOfClient.map((service, index) => (
-                    <Table.Row key={index}>
-                      <Table.Cell>{service.nombre}</Table.Cell>
-                      <Table.Cell>{parseFecha(service.fecha)}</Table.Cell>
-                      <Table.Cell>${service.precio}</Table.Cell>
-                      <Table.Cell textAlign="center">
-                        <Button
-                          color="red"
-                          onClick={() => {
-                            deleteService(service._id);
-                          }}
-                          size="mini"
-                        >
-                          <Icon name="trash" size="small" />
-                        </Button>
+            <Modal.Content className="table-modal-cont">
+              <Header>Historial de Servicios / Productos</Header>
+              <Table inverted color="blue" celled>
+                <Table.Header className="table-modal-cont-header">
+                  <Table.Row>
+                    <Table.HeaderCell>Servicio</Table.HeaderCell>
+                    <Table.HeaderCell>Fecha</Table.HeaderCell>
+                    <Table.HeaderCell>Costo</Table.HeaderCell>
+                    <Table.HeaderCell>Acciones</Table.HeaderCell>
+                  </Table.Row>
+                </Table.Header>
+                <Table.Body className="body-table-modal">
+                  {servicesOfClient.length > 0 ? (
+                    servicesOfClient.map((service, index) => (
+                      <Table.Row key={index}>
+                        <Table.Cell>{service.nombre}</Table.Cell>
+                        <Table.Cell>{parseFecha(service.fecha)}</Table.Cell>
+                        <Table.Cell>${service.precio}</Table.Cell>
+                        <Table.Cell textAlign="center">
+                          <Button
+                            color="red"
+                            onClick={() => {
+                              deleteService(service._id);
+                            }}
+                            size="mini"
+                          >
+                            <Icon name="trash" size="small" />
+                          </Button>
+                        </Table.Cell>
+                      </Table.Row>
+                    ))
+                  ) : (
+                    <Table.Row>
+                      <Table.Cell colSpan="3">No hay servicios</Table.Cell>
+                    </Table.Row>
+                  )}
+                </Table.Body>
+              </Table>
+            </Modal.Content>
+            <Modal.Content className="table-modal-cont">
+              <Header>Servicios Futuros</Header>
+              <Table inverted color="grey" celled>
+                <Table.Header className="table-modal-cont-header">
+                  <Table.Row>
+                    <Table.HeaderCell>Servicio</Table.HeaderCell>
+                    <Table.HeaderCell>Fecha</Table.HeaderCell>
+                    <Table.HeaderCell>Costo</Table.HeaderCell>
+                    <Table.HeaderCell>Acciones</Table.HeaderCell>
+                  </Table.Row>
+                </Table.Header>
+                <Table.Body className="body-table-modal">
+                  {servicesFutures.length > 0 ? (
+                    servicesFutures.map((service, index) => (
+                      <Table.Row key={index}>
+                        <Table.Cell>{service.nombre}</Table.Cell>
+                        <Table.Cell>
+                          {parseFecha(service.fecha, true)}
+                        </Table.Cell>
+                        <Table.Cell>${service.precio}</Table.Cell>
+                        <Table.Cell>
+                          <Button
+                            size="mini"
+                            color="green"
+                            onClick={() => {
+                              completeService(service._id);
+                            }}
+                          >
+                            <Icon size="small" name="trash" />
+                          </Button>
+                          <Button
+                            size="mini"
+                            color="red"
+                            onClick={() => {
+                              deleteServiceFuture(service._id);
+                            }}
+                          >
+                            <Icon size="tiny" name="delete" />
+                          </Button>
+                        </Table.Cell>
+                      </Table.Row>
+                    ))
+                  ) : (
+                    <Table.Row>
+                      <Table.Cell colSpan="3">
+                        No hay servicios agendados
                       </Table.Cell>
                     </Table.Row>
-                  ))
-                ) : (
-                  <Table.Row>
-                    <Table.Cell colSpan="3">No hay servicios</Table.Cell>
-                  </Table.Row>
-                )}
-              </Table.Body>
-            </Table>
-          </Modal.Content>
-          <Modal.Content className="table-modal-cont">
-            <Header>Servicios Futuros</Header>
-            <Table inverted color="grey" celled>
-              <Table.Header className="table-modal-cont-header">
-                <Table.Row>
-                  <Table.HeaderCell>Servicio</Table.HeaderCell>
-                  <Table.HeaderCell>Fecha</Table.HeaderCell>
-                  <Table.HeaderCell>Costo</Table.HeaderCell>
-                  <Table.HeaderCell>Acciones</Table.HeaderCell>
-                </Table.Row>
-              </Table.Header>
-              <Table.Body className="body-table-modal">
-                {servicesFutures.length > 0 ? (
-                  servicesFutures.map((service, index) => (
-                    <Table.Row key={index}>
-                      <Table.Cell>{service.nombre}</Table.Cell>
-                      <Table.Cell>{parseFecha(service.fecha, true)}</Table.Cell>
-                      <Table.Cell>${service.precio}</Table.Cell>
-                      <Table.Cell>
-                        <Button
-                          size="mini"
-                          color="green"
-                          onClick={() => {
-                            completeService(service._id);
-                          }}
-                        >
-                          <Icon size="small" name="trash" />
-                        </Button>
-                        <Button
-                          size="mini"
-                          color="red"
-                          onClick={() => {
-                            deleteServiceFuture(service._id);
-                          }}
-                        >
-                          <Icon size="tiny" name="delete" />
-                        </Button>
-                      </Table.Cell>
-                    </Table.Row>
-                  ))
-                ) : (
-                  <Table.Row>
-                    <Table.Cell colSpan="3">
-                      No hay servicios agendados
-                    </Table.Cell>
-                  </Table.Row>
-                )}
-              </Table.Body>
-            </Table>
-          </Modal.Content>
+                  )}
+                </Table.Body>
+              </Table>
+            </Modal.Content>
           </div>
         </Modal.Content>
 
