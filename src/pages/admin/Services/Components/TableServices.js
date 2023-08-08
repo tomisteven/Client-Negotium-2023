@@ -17,7 +17,7 @@ export default function TableServices({
   sinServices,
   setServices,
 }) {
-  const { accesToken, user } = useAuth();
+  const { accesToken } = useAuth();
   const [service, setService] = React.useState(null);
   const [open, setOpen] = React.useState(false);
 
@@ -84,128 +84,134 @@ export default function TableServices({
           </tr>
         </thead>
         <tbody>
-          {services.map((service, index) => {
-            return (
-              <tr
-                style={{
-                  color: "#000000",
-                }}
-              >
-                <td
+          {services.length > 0 ? (
+            services.map((service, index) => {
+              return (
+                <tr
                   style={{
-                    fontWeight: "bold",
+                    color: "#000000",
                   }}
                 >
-                  {"  "}
-                  <img src={service.habilitado ? active : inactive} alt="" />
-                </td>
-                <td> {service.nombre}</td>
-                <td> {service.descripcion} </td>
-                <td>
-                  <p class="status delivered">{service.cantidadVendidos}</p>
-                </td>
-                <td>
-                  <p
+                  <td
                     style={{
                       fontWeight: "bold",
-                      padding: "10px",
                     }}
-                    class="status delivered"
                   >
-                    ${service.precio}
-                  </p>
-                </td>
-                <td
-                  style={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                    gap: "3px",
-                    height: "100%",
-                  }}
-                >
-                  {window.innerWidth > 768 ? (
-                    <>
-                      <Button
-                        size="mini"
-                        color={service.habilitado ? "orange" : "green"}
-                        onClick={() => {
-                          setLoad(true);
-                          activeService(service._id);
-                        }}
-                      >
-                        {service.habilitado ? "Deshabilitar" : "Habilitar"}
-                      </Button>
-                      <Button
-                        size="mini"
-                        primary
-                        onClick={() => editService(service)}
-                        className="btn-see"
-                      >
-                        Editar
-                      </Button>
-                      <Button
-                        size="mini"
-                        color="red"
-                        onClick={() => deleteService(service._id)}
-                      >
-                        Eliminar
-                      </Button>
-                    </>
-                  ) : (
-                    <Dropdown
-                      className="drop-td"
-                      icon={
-                        <Button
-                          primary
-                          size="tiny"
-                          icon={"bars"}
-                          class="btn btn-edit"
-                        />
-                      }
+                    {"  "}
+                    <img src={service.habilitado ? active : inactive} alt="" />
+                  </td>
+                  <td> {service.nombre}</td>
+                  <td> {service.descripcion} </td>
+                  <td>
+                    <p class="status delivered">{service.cantidadVendidos}</p>
+                  </td>
+                  <td>
+                    <p
+                      style={{
+                        fontWeight: "bold",
+                        padding: "10px",
+                      }}
+                      class="status delivered"
                     >
-                      <Dropdown.Menu>
-                        <Dropdown.Item text="New">
+                      ${service.precio}
+                    </p>
+                  </td>
+                  <td
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                      gap: "3px",
+                      height: "100%",
+                    }}
+                  >
+                    {window.innerWidth > 768 ? (
+                      <>
+                        <Button
+                          size="mini"
+                          color={service.habilitado ? "orange" : "green"}
+                          onClick={() => {
+                            setLoad(true);
+                            activeService(service._id);
+                          }}
+                        >
+                          {service.habilitado ? "Deshabilitar" : "Habilitar"}
+                        </Button>
+                        <Button
+                          size="mini"
+                          primary
+                          onClick={() => editService(service)}
+                          className="btn-see"
+                        >
+                          Editar
+                        </Button>
+                        <Button
+                          size="mini"
+                          color="red"
+                          onClick={() => deleteService(service._id)}
+                        >
+                          Eliminar
+                        </Button>
+                      </>
+                    ) : (
+                      <Dropdown
+                        className="drop-td"
+                        icon={
                           <Button
-
-                            onClick={() => {
-                              setLoad(true);
-                              activeService(service._id);
-                            }}
-                            content={
-                              service.habilitado ? "Deshabilitar" : "Habilitar"
-                            }
-                            size="mini"
-                            color={
-                              service.habilitado ? "orange" : "green"
-                            }
+                            primary
+                            size="tiny"
+                            icon={"bars"}
+                            class="btn btn-edit"
                           />
-                        </Dropdown.Item>
-                        <Dropdown.Item text="New">
-                          <Button
-                            onClick={() => editService(service)}
-                            content="Editar"
-                            size="mini"
-                            color="blue"
-                          />
-                        </Dropdown.Item>
-                        <Dropdown.Item text="New">
-                          <Button
-                            size="mini"
-                            color="youtube"
-                            onClick={() => deleteService(service._id)}
-                            className="btn-delete"
-                          >
-                            Eliminar
-                          </Button>
-                        </Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  )}
-                </td>
-              </tr>
-            );
-          })}
+                        }
+                      >
+                        <Dropdown.Menu>
+                          <Dropdown.Item text="New">
+                            <Button
+                              onClick={() => {
+                                setLoad(true);
+                                activeService(service._id);
+                              }}
+                              content={
+                                service.habilitado
+                                  ? "Deshabilitar"
+                                  : "Habilitar"
+                              }
+                              size="mini"
+                              color={service.habilitado ? "orange" : "green"}
+                            />
+                          </Dropdown.Item>
+                          <Dropdown.Item text="New">
+                            <Button
+                              onClick={() => editService(service)}
+                              content="Editar"
+                              size="mini"
+                              color="blue"
+                            />
+                          </Dropdown.Item>
+                          <Dropdown.Item text="New">
+                            <Button
+                              size="mini"
+                              color="youtube"
+                              onClick={() => deleteService(service._id)}
+                              className="btn-delete"
+                            >
+                              Eliminar
+                            </Button>
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    )}
+                  </td>
+                </tr>
+              );
+            })
+          ) : (
+            <div className="no-clientes-table">
+              <h3>No se encontraron Servicios agregados</h3>
+              <img className="img_sin_clientes" src={add_service} alt="" />
+            </div>
+          )}
         </tbody>
       </table>
 

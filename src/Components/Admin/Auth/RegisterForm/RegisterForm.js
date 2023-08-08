@@ -11,7 +11,7 @@ const authController = new Auth(); //instanciamos la clase Auth de auth.js para 
 
 export function RegisterForm(props) {
   const saludo = () => {
-    toast("Registro Exitoso, Ahora Logeate", {
+    toast("Registro Exitoso, Ahora Inicia Sesion!", {
       position: toast.POSITION.TOP_RIGHT,
     });
   };

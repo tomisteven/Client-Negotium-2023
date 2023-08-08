@@ -1,6 +1,20 @@
 .contenido-calendar{
   margin-top: -60px;
 }
+
+.fc .fc-col-header-cell-cushion{
+  padding: 0;
+color: #000000;
+}
+.fc .fc-day{
+  color: #000000;
+}
+.fc-toolbar-chunk, .fc-daygrid-day-number{
+  color: #000000;
+}
+
+
+
 .contenido-servicios-clientes{
   width: 49%;
   height: 350px;

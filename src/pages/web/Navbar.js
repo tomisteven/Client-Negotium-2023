@@ -14,21 +14,21 @@ function Navbar() {
         <Link className="link-item-web" to="/">
           Inicio
         </Link>
-        <Link className="link-item-web" to="/">
-          Nosotros
+
+        <Link style={{
+          backgroundColor: "#99b4ff",
+          color: "#000",
+          borderRadius: "5px",
+          padding: "5px",
+          fontWeight: "bold",
+          fontSize: "15px",
+          marginLeft: "10px",
+          marginRight: "10px",
+          fontFamily: "Arial",
+        }} className="link-item-web" to="/login/client">
+          Login Clientes
         </Link>
-        <Link className="link-item-web" to="/">
-          Clientes
-        </Link>
-        <Link className="link-item-web" to="/">
-          Servicios
-        </Link>
-        <Link className="link-item-web" to="/">
-          Recordatorios
-        </Link>
-        <Link className="link-item-web" to="/">
-          Archivos
-        </Link>
+
         <Link className="link-item-web" to="/">
           Contacto
         </Link>

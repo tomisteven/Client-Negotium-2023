@@ -50,14 +50,14 @@ export default function TableClients({
     color: obscuro ? "#ffffff" : "#000000",
   };
 
-  if (clients.length === 0 || clients === undefined) {
+/*   if (clients.length === 0 || clients === undefined) {
     return (
       <div className="no-clientes-table">
         <h3>No se encontraron clientes</h3>
         <img className="img_sin_clientes" src={sin_clientes} alt="" />
       </div>
     );
-  }
+  } */
 
   return (
     <>
@@ -75,121 +75,48 @@ export default function TableClients({
             </tr>
           </thead>
           <tbody>
-            {clients.map((client, index) => (
-              <tr>
-                <td>{index + 1}</td>
-                <td
-                  style={{
-                    fontWeight: "bold",
-                  }}
-                >
-                  {"  "}
-                  <img
-                    src={client.genero === "Femenino" ? avatarF : avatarM}
-                    alt=""
-                  />
-                  {client.nombre} {client.apellido}{" "}
-                </td>
-                <td> {client.email}</td>
-                <td> {client.telefono} </td>
-                <td>
-                  <p class="status delivered">${client.gastoTotal}</p>
-                </td>
-                <td>
-                  <p
-                    class="status delivered"
-                    style={
-                      client.deudaTotal > 0
-                        ? {
-                            backgroundColor: "#d893a3",
-                            color: "#fff",
-                          }
-                        : {
-                            fontWeight: "bold",
-                          }
-                    }
-                  >
-                    ${client.deudaTotal}
-                  </p>
-                </td>
-                <td>
-                  {window.innerWidth > 768 ? (
-                    <>
-                      <Button
-                        size="mini"
-                        color="green"
-                        onClick={() => {
-                          viewClientInModal(client);
-                        }}
-                      >
-                        Ver
-                      </Button>
-                      <Button
-                        size="mini"
-                        primary
-                        onClick={() => {
-                          editCreateClient(client);
-                        }}
-                        className="btn-see"
-                      >
-                        Editar
-                      </Button>
-                      <Button
-                        onClick={() => {
-                          viewModalService(client, false);
-                        }}
-                        size="mini"
-                        color="orange"
-                        className="btn-delete"
-                      >
-                        + Servicio
-                      </Button>
-                      <Button
-                        onClick={() => {
-                          viewModalService(client, true);
-                        }}
-                        size="mini"
-                        color="instagram"
-                        className="btn-delete"
-                      >
-                        + Servicio Futuro
-                      </Button>
-                      <Button
-                        size="mini"
-                        color="purple"
-                        onClick={() => {
-                          viewModalAnularDeuda(client);
-                        }}
-                      >
-                        Editar Deuda
-                      </Button>
-                      <Button
-                        size="mini"
-                        color="youtube"
-                        onClick={() => {
-                          deleteClient(client);
-                        }}
-                        className="btn-delete"
-                      >
-                        Eliminar
-                      </Button>
-                      <Button icon="print" size="mini" color="blue" />
-                      <Button icon="whatsapp" size="mini" color="green" />
-                    </>
-                  ) : (
-                    <Dropdown
-                      className="drop-td"
-                      icon={
-                        <Button
-                          primary
-                          size="tiny"
-                          icon={"bars"}
-                          class="btn btn-edit"
-                        />
-                      }
+            {
+              clients.length ?  (
+                clients.map((client, index) => (
+                  <tr>
+                    <td>{index + 1}</td>
+                    <td
+                      style={{
+                        fontWeight: "bold",
+                      }}
                     >
-                      <Dropdown.Menu>
-                        <Dropdown.Item text="New">
+                      {"  "}
+                      <img
+                        src={client.genero === "Femenino" ? avatarF : avatarM}
+                        alt=""
+                      />
+                      {client.nombre} {client.apellido}{" "}
+                    </td>
+                    <td> {client.email}</td>
+                    <td> {client.telefono} </td>
+                    <td>
+                      <p class="status delivered">${client.gastoTotal}</p>
+                    </td>
+                    <td>
+                      <p
+                        class="status delivered"
+                        style={
+                          client.deudaTotal > 0
+                            ? {
+                                backgroundColor: "#d893a3",
+                                color: "#fff",
+                              }
+                            : {
+                                fontWeight: "bold",
+                              }
+                        }
+                      >
+                        ${client.deudaTotal}
+                      </p>
+                    </td>
+                    <td>
+                      {window.innerWidth > 768 ? (
+                        <>
                           <Button
                             size="mini"
                             color="green"
@@ -199,8 +126,6 @@ export default function TableClients({
                           >
                             Ver
                           </Button>
-                        </Dropdown.Item>
-                        <Dropdown.Item text="New">
                           <Button
                             size="mini"
                             primary
@@ -211,8 +136,6 @@ export default function TableClients({
                           >
                             Editar
                           </Button>
-                        </Dropdown.Item>
-                        <Dropdown.Item text="New">
                           <Button
                             onClick={() => {
                               viewModalService(client, false);
@@ -223,8 +146,6 @@ export default function TableClients({
                           >
                             + Servicio
                           </Button>
-                        </Dropdown.Item>
-                        <Dropdown.Item text="New">
                           <Button
                             onClick={() => {
                               viewModalService(client, true);
@@ -235,8 +156,6 @@ export default function TableClients({
                           >
                             + Servicio Futuro
                           </Button>
-                        </Dropdown.Item>
-                        <Dropdown.Item text="New">
                           <Button
                             size="mini"
                             color="purple"
@@ -246,8 +165,6 @@ export default function TableClients({
                           >
                             Editar Deuda
                           </Button>
-                        </Dropdown.Item>
-                        <Dropdown.Item text="New">
                           <Button
                             size="mini"
                             color="youtube"
@@ -258,19 +175,113 @@ export default function TableClients({
                           >
                             Eliminar
                           </Button>
-                        </Dropdown.Item>
-                        <Dropdown.Item text="New">
                           <Button icon="print" size="mini" color="blue" />
-                        </Dropdown.Item>
-                        <Dropdown.Item text="New">
                           <Button icon="whatsapp" size="mini" color="green" />
-                        </Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  )}
-                </td>
-              </tr>
-            ))}
+                        </>
+                      ) : (
+                        <Dropdown
+                          className="drop-td"
+                          icon={
+                            <Button
+                              primary
+                              size="tiny"
+                              icon={"bars"}
+                              class="btn btn-edit"
+                            />
+                          }
+                        >
+                          <Dropdown.Menu>
+                            <Dropdown.Item text="New">
+                              <Button
+                                size="mini"
+                                color="green"
+                                onClick={() => {
+                                  viewClientInModal(client);
+                                }}
+                              >
+                                Ver
+                              </Button>
+                            </Dropdown.Item>
+                            <Dropdown.Item text="New">
+                              <Button
+                                size="mini"
+                                primary
+                                onClick={() => {
+                                  editCreateClient(client);
+                                }}
+                                className="btn-see"
+                              >
+                                Editar
+                              </Button>
+                            </Dropdown.Item>
+                            <Dropdown.Item text="New">
+                              <Button
+                                onClick={() => {
+                                  viewModalService(client, false);
+                                }}
+                                size="mini"
+                                color="orange"
+                                className="btn-delete"
+                              >
+                                + Servicio
+                              </Button>
+                            </Dropdown.Item>
+                            <Dropdown.Item text="New">
+                              <Button
+                                onClick={() => {
+                                  viewModalService(client, true);
+                                }}
+                                size="mini"
+                                color="instagram"
+                                className="btn-delete"
+                              >
+                                + Servicio Futuro
+                              </Button>
+                            </Dropdown.Item>
+                            <Dropdown.Item text="New">
+                              <Button
+                                size="mini"
+                                color="purple"
+                                onClick={() => {
+                                  viewModalAnularDeuda(client);
+                                }}
+                              >
+                                Editar Deuda
+                              </Button>
+                            </Dropdown.Item>
+                            <Dropdown.Item text="New">
+                              <Button
+                                size="mini"
+                                color="youtube"
+                                onClick={() => {
+                                  deleteClient(client);
+                                }}
+                                className="btn-delete"
+                              >
+                                Eliminar
+                              </Button>
+                            </Dropdown.Item>
+                            <Dropdown.Item text="New">
+                              <Button icon="print" size="mini" color="blue" />
+                            </Dropdown.Item>
+                            <Dropdown.Item text="New">
+                              <Button icon="whatsapp" size="mini" color="green" />
+                            </Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
+                      )}
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <>
+                <div className="no-clientes-table">
+                      <h3>No se encontraron clientes</h3>
+                      <img className="img_sin_clientes" src={sin_clientes} alt="" />
+                    </div>
+                </>
+              )
+            }
           </tbody>
         </table>
       </section>

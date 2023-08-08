@@ -101,9 +101,11 @@ export function Calendar() {
           themeSystem="bootstrap"
           locale={esLocale}
           events={eventsFinal}
-          eventColor="#9983c9"
+          eventColor="#8653f5"
+          closeHint="Cerrar"
           plugins={[dayGridPlugin]}
           initialView="dayGridMonth"
+          eventBackgroundColor="#8653f5"
         />
       </div>
       <div class="dos-cont">

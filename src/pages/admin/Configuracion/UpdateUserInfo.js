@@ -164,12 +164,7 @@ export default function UpdateUserInfo() {
           </div>
           <div class="cont-btn-save">
             <Button
-              disabled={
-                !formData.name ||
-                !formData.lastname ||
-                !formData.email ||
-                !formData.pass_aplication
-              }
+
               className="btn-save-pass"
               onClick={() => {
                 updateUserInfo();
