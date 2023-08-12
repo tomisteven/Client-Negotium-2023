@@ -65,6 +65,13 @@
         align-items: center;
         overflow: hidden;
     }
+    .menu-expandible-close{
+      display:flex;
+      flex-direction: row;
+      justify-content:center;
+      align-items: center;
+      width: 100%;
+    }
   }
 
   /* Teléfonos inteligentes con pantallas medianas */
